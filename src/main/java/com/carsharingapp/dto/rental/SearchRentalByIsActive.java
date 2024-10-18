@@ -1,6 +1,6 @@
 package com.carsharingapp.dto.rental;
 
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -8,6 +8,6 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class SearchRentalByIsActive {
     private String userId;
-    @NotNull(message = "IsActive can't be null")
+    @NotBlank(message = "IsActive can't be blank")
     private String isActive;
 }

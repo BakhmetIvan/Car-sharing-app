@@ -38,7 +38,9 @@ public class AuthenticationService {
             throw new LoginException(ExceptionMessages.AUTHENTICATION_FAILURE_EXCEPTION, e);
         }
         String jwt = jwtUtil.generateToken(user);
-        return new UserLoginResponseDto(jwt);
+        UserLoginResponseDto responseDto = new UserLoginResponseDto();
+        responseDto.setToken(jwt);
+        return responseDto;
     }
 
     public boolean telegramAdminsAuthenticate(String email, String password, Long chatId)
